@@ -30,15 +30,15 @@ def horizontal_range():
    return x_range
 
 
-os.system("cls")
+os.system("clear")
 player_gravity = int(input("Type 1 for Earth gravity simulation, 2 for Moon and 3 for Mars: ")) - 1
 angle = math.radians(float(input("Enter the angle of the launch (in degrees): ")))
 velocity = float(input("Enter the initial velocity of the lunch (in meters per second): "))
 choosen_gravity = gravity_list[player_gravity]
 
-FlightTime = float(round(flight_time(),2))
-MaximumHeight = float(round(maximum_height(),2))
-HorizontalRange = float(round(horizontal_range(),2))
+FlightTime = "{:,}".format(float(round(flight_time(),2)))
+MaximumHeight = "{:,}".format(float(round(maximum_height(),2)))
+HorizontalRange = "{:,}".format(float(round(horizontal_range(),2)))
 
 print("The total flight time is %s seconds, the maximum height reached is %s meters and the distance traveled is %s meters" % (FlightTime,MaximumHeight,HorizontalRange))
 if player_gravity == 0:
